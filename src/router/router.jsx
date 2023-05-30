@@ -14,6 +14,9 @@ import NotFound from "../components/NotFound";
 import Categories from "../features/Categories";
 import Dashboard from "../features/Dashboard";
 
+
+
+
 const router = createBrowserRouter([
 
   {
