@@ -25,11 +25,11 @@ const arrayRouter = []
 const listMenu = async () => {
   try {
     const { data } = await apiMenu.getAll()
-    data.forEach(items => {
+    data.forEach((items,index) => {
       if (items.subMenu[0] === null) {
         menuDontHaveSubMenu(items)
       } else {
-        menuHasSubMenu(items)
+        menuHasSubMenu(items,index)
       }
     });
   } catch (error) {
@@ -37,18 +37,24 @@ const listMenu = async () => {
   }
 }
 
-const menuHasSubMenu = (item) => {
-  arrayRouter.push({
-    path: `${item.path}`,
-    element: <Header />,
-    children: item.subMenu.forEach(subMenu => {
-      return {
-        path: `${subMenu.path}`,
-        element: <Form />
-      }
+const menuHasSubMenu = (item,index) => {
+  const listSubmenu = []
+
+  item.subMenu.forEach(subMenu => {
+    listSubmenu.push({
+      path: `${subMenu.path}`,
+      element: <Form />
     })
   })
+  
+  arrayRouter.push({
+    path: `dynamic_${index}`,
+    element: <Header />,
+    children: listSubmenu
+  })
 }
+
+console.log(arrayRouter,"array router");
 
 const menuDontHaveSubMenu = (item) =>{
   arrayRouter.push({

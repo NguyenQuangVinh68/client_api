@@ -74,10 +74,11 @@ function Sidebar() {
             </Link>
           </li>
           {menu.length > 0 && menu.map((items, index) => {
+            const urlParent = `/dynamic_${index}/`
             if (items.subMenu[0] !== null ) {
-              return <CollapseSidebar data={items} key={index} />
+              return <CollapseSidebar data={items} key={index} urlParent={urlParent} />
             } else {
-              return <li className="sidebar__nav-item" key={index}>
+              return <li className="sidebar__nav-item" key={index}   >
                 <Link to={items.path} className="sidebar__nav-link">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

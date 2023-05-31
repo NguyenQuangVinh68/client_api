@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiFillCaretDown,AiFillBehanceCircle,AiOutlineCaretUp } from "react-icons/ai"
 
-function CollapseSidebar({ data }) {
+function CollapseSidebar({ data,urlParent }) {
 
     const [dropdown, setDropdown] = useState(false)
     return (
@@ -23,7 +23,7 @@ function CollapseSidebar({ data }) {
                     <ul className={` dropdown ${dropdown ? "show" : ""}`} id={data.path}>
                         {data.subMenu.map((item, index) => {
                             return <li className="mt-3" key={index}>
-                                <Link to={item.path} className="sidebar__nav-link">
+                                <Link to={urlParent+ item.path} className="sidebar__nav-link">
                                     {item.name}
                                 </Link>
                             </li>
