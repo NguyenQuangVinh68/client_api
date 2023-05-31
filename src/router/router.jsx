@@ -24,10 +24,7 @@ const router = createBrowserRouter([
     element: <MasterLayoutClient />,
     children: [
       {path:"/", element: <Navigate to="/dashboard" />},
-      {
-        path: "product", element: <Product />
-      },
-
+      {path: "product", element: <Product />},
       { path: "category", element: <Categories /> },
       { path: "dashboard", element: <Dashboard /> }
     ]
