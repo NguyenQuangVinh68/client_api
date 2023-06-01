@@ -93,21 +93,6 @@ function Sidebar() {
           })}
         </ul>
         {/* end sidebar nav */}
-
-        {/* sidebar copyright */}
-        <div className="sidebar__copyright">
-          © FlixGo, 2018—2022. <br />
-          Create by{" "}
-          <a
-            href="https://themeforest.net/user/dmitryvolkov/portfolio"
-            target="_blank"
-            rel="noopener"
-          >
-            Dmitry Volkov
-          </a>
-          .
-        </div>
-        {/* end sidebar copyright */}
       </div>}
     </>
   );
